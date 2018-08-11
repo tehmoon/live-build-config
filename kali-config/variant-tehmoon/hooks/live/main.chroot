@@ -1,0 +1,20 @@
+#!/bin/bash
+
+mkdir -pv /opt/share
+mkdir -pv /opt/local/bin
+
+apt update
+apt install -y curl
+
+curl -Lo /opt/local/bin/kali_setup.sh https://gist.githubusercontent.com/tehmoon/c098cfc633d4b0c94b8ac022ec0f353d/raw/kali_setup.sh
+
+. /opt/local/bin/kali_setup.sh
+
+setup_dir
+
+update_kali
+install_packages_kali
+config_kali
+setup_user
+
+cleanup_packages
